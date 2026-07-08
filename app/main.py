@@ -9,7 +9,10 @@ def move_file(cmd: str) -> None:
     if command != "mv":
         return
     if destination.endswith("/"):
-        destination = os.path.join(*destination.split("/"), os.path.basename(source))
+        destination = os.path.join(
+            *destination.split("/"),
+            os.path.basename(source)
+        )
     path = ""
     if len(destination.split("/")) > 1:
         path = os.path.join(*destination.split("/")[:-1])
